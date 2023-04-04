@@ -27,11 +27,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" />
 
-    <title>ETF</title>
+    <title>ECF</title>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-lg">
       <div class="container-fluid">
         <a
           class="navbar-brand"
@@ -82,17 +82,42 @@
               >
             </li>
             <li class="nav-item">
-              <a
-              id="panier"
-                class="nav-link"
-                href="#"
-                ><i class="fas fa-shopping-cart"></i> Panier</a
-              >
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#panierModal">
+                Voir le panier
+              </button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <!-- Modale -->
+<div class="modal fade" id="panierModal" tabindex="-1" aria-labelledby="panierModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header mx-auto d-flex">
+        <h5 class="modal-title my-auto" id="panierModalLabel">Mon panier</h5>
+      </div>             
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Image</th>
+              <th scope="col">Produit</th>
+              <th scope="col">Quantité</th>
+              <th scope="col">Prix</th>
+            </tr>
+          </thead>
+          <tbody id="panierTableBody">
+          </tbody>
+        </table>
+        <p class="text-end fw-bold text-center">Total : <span id="panierTotal"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
 
     <div id="diaporama"></div>
 
@@ -104,74 +129,74 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card">
+            <div class="card border border-5">
               <img
-                src="Vinyle1.webp"
+                src="vinyle1.webp"
                 class="card-img-top"
                 alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Vinyle 1</h5>
-                <p class="card-text">9.99€</p>
+                <p class="card-text text-info">9.99€</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card">
+            <div class="card border border-5">
               <img
-                src="Vinyle2.webp"
+                src="vinyle2.webp"
                 class="card-img-top"
                 alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Vinyle 2</h5>
-                <p class="card-text">7.99€</p>
+                <p class="card-text text-info">7.99€</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-            <div class="card">
+            <div class="card border border-5">
               <img
-                src="Vinyle3.webp"
+                src="vinyle3.webp"
                 class="card-img-top"
                 alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Vinyle 3</h5>
-                <p class="card-text">32.99€</p>
+                <p class="card-text text-info">32.99€</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 mb-4 delete">
-            <div class="card">
+            <div class="card border border-5">
               <img
-                src="Vinyle4.webp"
+                src="vinyle4.webp"
                 class="card-img-top"
                 alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Vinyle 4</h5>
-                <p class="card-text">9.99€</p>
+                <p class="card-text text-info">9.99€</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 mb-4 delete">
-            <div class="card">
+            <div class="card border border-5">
               <img
-                src="Vinyle5.webp"
+                src="vinyle5.webp"
                 class="card-img-top"
                 alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Vinyle 5</h5>
-                <p class="card-text">14.99€</p>
+                <p class="card-text text-info">14.99€</p>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 mb-4 delete">
-            <div class="card">
+            <div class="card border border-5">
               <img
-                src="Vinyle6.webp"
+                src="vinyle6.webp"
                 class="card-img-top"
                 alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Vinyle 6</h5>
-                <p class="card-text">24.99€</p>
+                <p class="card-text text-info">24.99€</p>
               </div>
             </div>
           </div>
@@ -270,7 +295,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-6 flex-column order-last">
+      <div class="col-12 col-md-6 mt-5 flex-column order-last">
         <div
           class="tab-content"
           id="nav-tabContent">
@@ -280,14 +305,14 @@
             role="tabpanel">
             <div class="list-info text-center">
               <h3 class="mt-4 mb-3">Vinyle 1</h3>
-              <img class="mb-2 border border-5" src="Vinyle1.webp" alt="" style="width: 250px; height: 250px" />
-              <p>Prix unitaire: 9.99€ TTC</p>
-              <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+              <img class="mb-2 border border-5" src="vinyle1.webp" alt="" style="width: 250px; height: 250px" />
+              <p><em>Prix unitaire: 9.99€ TTC</em></p>
+              <p class="mb-2 price total-price price-number">0.00€ TTC</p>
               <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle1', true, 9.99)"></i>
-              <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+              <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
               <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle1', false, 9.99)"></i>
               <br />
-              <button id="ajouter-panier-1" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-1" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle1.webp">Ajouter au panier</button>
             </div>                                
           </div>
           <div
@@ -298,16 +323,16 @@
               <h3 class="mt-4 mb-3">Vinyle 2</h3>
               <img
                 class="mb-2 border border-5"
-                src="Vinyle2.webp"
+                src="vinyle2.webp"
                 alt=""
                 style="width: 250px; height: 250px" />
-                <p>Prix unitaire: 7.99€ TTC</p>
-                <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+                <p><em>Prix unitaire: 7.99€ TTC</em></p>
+                <p class="mb-2 price total-price price-number">0.00€ TTC</p>
                 <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle2', true, 7.99)"></i>
-                <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+                <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
                 <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle2', false, 7.99)"></i>
               <br />
-              <button id="ajouter-panier-2" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-2" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle2.webp">Ajouter au panier</button>
             </div>
           </div>
           <div
@@ -318,16 +343,16 @@
               <h3 class="mt-4 mb-3">Vinyle 3</h3>
               <img
                 class="mb-2 border border-5"
-                src="Vinyle3.webp"
+                src="vinyle3.webp"
                 alt=""
                 style="width: 250px; height: 250px" />
-                <p>Prix unitaire: 32.99€ TTC</p>
-                <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+                <p><em>Prix unitaire: 32.99€ TTC</em></p>
+                <p class="mb-2 price total-price price-number">0.00€ TTC</p>
                 <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle3', true, 32.99)"></i>
-                <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+                <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
                 <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle3', false, 32.99)"></i>
               <br />
-              <button id="ajouter-panier-3" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-3" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle3.webp">Ajouter au panier</button>
             </div>
           </div>
           <div
@@ -338,16 +363,16 @@
               <h3 class="mt-4 mb-3">Vinyle 4</h3>
               <img
                 class="mb-2 border border-5"
-                src="Vinyle4.webp"
+                src="vinyle4.webp"
                 alt=""
                 style="width: 250px; height: 250px" />
-                <p>Prix unitaire: 9.99€ TTC</p>
-              <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+                <p><em>Prix unitaire: 9.99€ TTC</em></p>
+              <p  class="mb-2 price total-price price-number">0.00€ TTC</p>
                 <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle4', true, 9.99)"></i>
-                <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+                <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
                 <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle4', false, 9.99)"></i>
               <br />
-              <button id="ajouter-panier-4" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-4" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle4.webp">Ajouter au panier</button>
             </div>
           </div>
           <div
@@ -358,16 +383,16 @@
               <h3 class="mt-4 mb-3">Vinyle 5</h3>
               <img
                 class="mb-2 border border-5"
-                src="Vinyle5.webp"
+                src="vinyle5.webp"
                 alt=""
                 style="width: 250px; height: 250px" />
-                <p>Prix unitaire: 14.99€ TTC</p>
-                <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+                <p><em>Prix unitaire: 14.99€ TTC</em></p>
+                <p class="mb-2 price total-price price-number">0.00€ TTC</p>
                 <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle5', true, 14.99)"></i>
-                <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+                <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
                 <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle5', false, 14.99)"></i>
               <br />
-              <button id="ajouter-panier-5" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-5" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle5.webp">Ajouter au panier</button>
             </div>
           </div>
           <div
@@ -378,16 +403,16 @@
               <h3 class="mt-4 mb-3">Vinyle 6</h3>
               <img
                 class="mb-2 border border-5"
-                src="Vinyle6.webp"
+                src="vinyle6.webp"
                 alt=""
                 style="width: 250px; height: 250px" />
-                <p>Prix unitaire: 24.99€ TTC</p>
-                <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+                <p><em>Prix unitaire: 24.99€ TTC</em></p>
+                <p class="mb-2 price total-price price-number">0.00€ TTC</p>
                 <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle6', true, 24.99)"></i>
-                <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+                <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
                 <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle6', false, 24.99)"></i>
               <br />
-              <button id="ajouter-panier-6" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-6" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle6.webp">Ajouter au panier</button>
             </div>
           </div>
           <div
@@ -398,16 +423,16 @@
               <h3 class="mt-4 mb-3">Vinyle 7</h3>
               <img
                 class="mb-2 border border-5"
-                src="Vinyle7.webp"
+                src="vinyle7.webp"
                 alt=""
                 style="width: 250px; height: 250px" />          
-                <p>Prix unitaire: 9.99€ TTC</p>
-                <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+                <p><em>Prix unitaire: 9.99€ TTC</em></p>
+                <p class="mb-2 price total-price price-number">0.00€ TTC</p>
                 <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle7', true, 9.99)"></i>
-                <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+                <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
                 <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle7', false, 9.99)"></i>
               <br />
-              <button id="ajouter-panier-7" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-7" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle7.webp">Ajouter au panier</button>
             </div>
           </div>
           <div
@@ -418,16 +443,16 @@
               <h3 class="mt-4 mb-3">Vinyle 8</h3>
               <img
                 class="mb-2 border border-5"
-                src="Vinyle8.webp"
+                src="vinyle8.webp"
                 alt=""
                 style="width: 250px; height: 250px" />
-                <p>Prix unitaire: 7.99€ TTC</p>
-                <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+                <p><em>Prix unitaire: 7.99€ TTC</em></p>
+                <p class="mb-2 price total-price price-number">0.00€ TTC</p>
                 <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle8', true, 7.99)"></i>
-                <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+                <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
                 <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle8', false, 7.99)"></i>
               <br />
-              <button id="ajouter-panier-8" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-8" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle8.webp">Ajouter au panier</button>
 
 
             </div>
@@ -440,16 +465,16 @@
               <h3 class="mt-4 mb-3">Vinyle 9</h3>
               <img
                 class="mb-2 border border-5"
-                src="Vinyle9.webp"
+                src="vinyle9.webp"
                 alt=""
                 style="width: 250px; height: 250px" />
-                <p>Prix unitaire: 14.99€ TTC</p>
-                <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+                <p><em>Prix unitaire: 14.99€ TTC</em></p>
+                <p class="mb-2 price total-price price-number">0.00€ TTC</p>
                 <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle9', true, 14.99)"></i>
-                <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+                <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
                 <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle9', false, 14.99)"></i>
               <br />
-              <button id="ajouter-panier-9" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-9" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle9.webp">Ajouter au panier</button>
 
             </div>
           </div>
@@ -461,16 +486,16 @@
               <h3 class="mt-4 mb-3">Vinyle 10</h3>
               <img
                 class="mb-2 border border-5"
-                src="Vinyle10.webp"
+                src="vinyle10.webp"
                 alt=""
                 style="width: 250px; height: 250px" />
-                <p>Prix unitaire: 29.99€ TTC</p>
-                <p style="font-size: 2rem" class="mb-2 price total-price">0€ TTC</p>
+                <p><em>Prix unitaire: 29.99€ TTC</em></p>
+                <p class="mb-2 price total-price price-number">0.00€ TTC</p>
                 <i class="fa-sharp fa-solid fa-arrow-up mb-2" onclick="updatePrice('vinyle10', true, 29.99)"></i>
-                <p style="margin-bottom: 0" class="mb-2 quantity">0</p>
+                <p style="margin-bottom: 0" class="mb-2 quantity price-number">0</p>
                 <i class="fa-sharp fa-solid fa-arrow-down mb-2" onclick="updatePrice('vinyle10', false, 29.99)"></i>
               <br />
-              <button id="ajouter-panier-10" class="btn btn-primary mb-3 ajouter-panier">Ajouter au panier</button>
+              <button id="ajouter-panier-10" class="btn btn-primary mb-3 ajouter-panier" data-image="vinyle10.webp">Ajouter au panier</button>
             </div>
           </div>
         </div>
@@ -481,9 +506,9 @@
       <h1 class="text mb-4 mt-4" id="contact">Contact:</h1>
     </div>
     
-    <div class="container border border-black p-3">
+    <div class="container border border-black p-3 ">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 ">
           <form id="contact-form">
             <div class="form-group">
               <label for="nom">Nom</label>
@@ -515,7 +540,10 @@
               <label class="form-check-label" for="accepter">J'accepte les conditions d'utilisation</label>
             </div>
     
-            <button type="submit" class="btn btn-primary" id="submit-button">Envoyer</button>
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary" id="submit-button">Envoyer</button>
+            </div>
+            
             
           </form>
         </div>
@@ -535,9 +563,10 @@
             class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
             <h1>Nos réseaux</h1>
             <div class="d-flex">
-              <i class="fab fa-facebook fa-3x mx-2"></i>
-              <i class="fab fa-twitter fa-3x mx-2"></i>
+              <span class="social-icon"><i class="fab fa-facebook fa-3x mx-2"></i></span> 
+              <span class="social-icon"><i class="fab fa-twitter fa-3x mx-2"></i></span> 
             </div>
+            
           </div>
           <div
             class="col-lg-6 d-flex flex-column justify-content-center align-items-center">

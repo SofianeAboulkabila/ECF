@@ -73,16 +73,51 @@ document.querySelectorAll(".ajouter-panier").forEach(function (button) {
   });
 });
 
-document.querySelector("#panier").addEventListener("click", function () {
+// Ajouter un événement de clic pour le bouton "Panier"
+document.querySelector("button[data-bs-target='#panierModal']").addEventListener("click", function () {
+
   let total = 0;
-  let message = "";
-  Object.entries(cart).forEach(function ([itemName, item]) {
-    message += itemName + " (quantité: " + item.quantity + ", prix cumulé: " + item.totalPrice.toFixed(2) + "€)\n";
-    total += item.totalPrice;
-  });
-  message += "Total: " + total.toFixed(2) + "€";
-  alert(message);
+  let modalTableBody = document.querySelector("#panierTableBody");
+  let modalTotal = document.querySelector("#panierTotal");
+
+  // Ajouter les éléments du panier au tableau dans la modale
+modalTableBody.innerHTML = "";
+Object.entries(cart).forEach(function ([itemName, item]) {
+  let tr = document.createElement("tr");
+  let itemNameTd = document.createElement("td");
+  let quantityTd = document.createElement("td");
+  let totalPriceTd = document.createElement("td");
+  let itemImageTd = document.createElement("td");
+  let itemImage = document.createElement("img");
+
+  itemNameTd.textContent = itemName;
+  quantityTd.textContent = item.quantity;
+  totalPriceTd.textContent = item.totalPrice.toFixed(2) + "€";
+  itemImage.src = itemName + ".webp";
+  itemImage.width = "32";
+  itemImage.height = "32";
+
+  tr.appendChild(itemImageTd);
+  itemImageTd.appendChild(itemImage);
+  tr.appendChild(itemNameTd);
+  tr.appendChild(quantityTd);
+  tr.appendChild(totalPriceTd);
+  modalTableBody.appendChild(tr);
+
+  total += item.totalPrice;
 });
+
+
+  // Afficher le total du panier dans la fenêtre modale
+  modalTotal.textContent = total.toFixed(2) + "€";
+
+  // Ouvrir la modale
+  let panierModal = new bootstrap.Modal(document.querySelector("#panierModal"));
+  panierModal.show();
+
+
+});
+
 
 const form = document.querySelector('form');
 

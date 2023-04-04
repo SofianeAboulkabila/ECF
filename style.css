@@ -4,6 +4,11 @@
   /* border: 1px solid red; */
 }
 
+nav {
+  font-family: Almendra;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
 nav img {
   max-height: 3rem;
   border-radius: 50%;
@@ -17,8 +22,9 @@ a.nav-link {
 ul {
   align-items: center;
 }
+
 .photo {
-  height: 700px;
+  height: 775px;
   position: absolute;
   top: 0;
   left: 0;
@@ -54,7 +60,7 @@ ul {
 }
 
 #MV {
-  margin-top: 700px;
+  margin-top: 825px;
 }
 #MV h1,
 #CATA h1,
@@ -78,3 +84,55 @@ footer h1 {
 .list-info {
   border: 1px solid rgb(126, 120, 120);
 }
+.card-img-top {
+  height: 275px;  
+}
+
+.price-number {
+  font-family: Akaya Telivigala;
+  font-size: 2.2rem
+}
+
+.fa-sharp {
+  font-size: 2rem;
+}
+
+#panier {
+  /* Définir une couleur de fond et de texte */
+  background-color: #0062cc;
+  color: #fff;
+  font-weight: 700;
+  /* Ajouter un padding et un espacement pour le texte */
+  padding: 8px 16px;
+  margin-right: 10px;
+  /* Ajouter une bordure arrondie */
+  border-radius: 4px;
+  /* Ajouter un effet de survol */
+  transition: background-color 0.3s ease-in-out;
+}
+
+#panier:hover {
+  /* Changer la couleur de fond au survol */
+  background-color: #8d8d8d;
+  text-decoration: none;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 00px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset -5px 0 0 1px white, inset -9px 0 0 1px #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e02200;
+  border-radius: 8px;
+  border-top: 1px #9e8989 solid;
+  box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.45), inset 0 0 5px 2px rgba(255, 0, 0, 0.4);
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
