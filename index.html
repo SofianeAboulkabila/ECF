@@ -11,15 +11,17 @@
     <link
       rel="stylesheet"
       href="style.css" />
+      <!-- BOOTSTRAP -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous" />
+      <!-- FONT-AWESOME -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+      <!-- GOOGLE FONT  -->
     <link
       href="https://fonts.googleapis.com/css?family=Almendra&display=swap"
       rel="stylesheet" />
@@ -51,6 +53,7 @@
         <div
           class="collapse navbar-collapse"
           id="navbarNav">
+          
           <ul class="navbar-nav ms-auto delete">
             <li class="nav-item">
               <a
@@ -91,7 +94,7 @@
       </div>
     </nav>
 
-    <!-- Modale -->
+    <!-- Modale panier -->
 <div class="modal fade" id="panierModal" tabindex="-1" aria-labelledby="panierModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -121,9 +124,11 @@
 
     <div id="diaporama"></div>
 
+    
     <div
       id="MV"
       class="text-center">
+     
       <h1 class="text" style="margin-top: 47rem" id="meilleures-ventes">Meilleures Ventes:</h1>
       <br />
       <div class="container">
@@ -552,7 +557,17 @@
           <iframe class="mt-2" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11609.27347545977!2d5.414236!3d43.3285266!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9bf97c6a188b5%3A0x26144d7cd0241160!2sAFPA%20-%20Centre%20de%20Marseille%2F%20Saint-J%C3%A9r%C3%B4me!5e0!3m2!1sfr!2sfr!4v1680400581134!5m2!1sfr!2sfr" height="400"  width="100%" style="border: 5px solid black" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
+    </div> 
+    <div class="container-meteo">
+      <div class="weather-icon">
+        <img id="weather-icon" src="" alt="">
+      </div>
+      <div class="weather-info">
+        <h5 id="city-name"></h5>
+        <p id="temperature"></p>
+      </div>
     </div>
+   
 
     <footer
       style="background-color: #d9d9d9; height: 300px"
@@ -571,7 +586,7 @@
           <div
             class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
             <h1>Nos coordonnées</h1>
-            <div class="my-3">
+            <div>
               <p>12 rue blablabla, 13001, Marseille</p>
               <p>06.06.06.06.06</p>
               <p>blablabla@blablabla.bla</p>
@@ -579,6 +594,7 @@
           </div>
         </div>
       </div>
+     
     </footer>
 
     <script

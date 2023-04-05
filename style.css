@@ -1,28 +1,36 @@
+/* Initialisation des propriétés de base */
 * {
   padding: 0;
   margin: 0;
-  /* border: 1px solid red; */
 }
 
+/* Styles pour la balise nav */
 nav {
   font-family: Almendra;
   font-size: 1.25rem;
   font-weight: 400;
 }
+
+/* Styles pour l'icône nav */
 nav img {
   max-height: 3rem;
   border-radius: 50%;
   margin-left: 25px;
   border: 2px solid black;
 }
+
+/* Styles pour les liens de navigation nav */
 a.nav-link {
   color: rgb(53, 52, 52);
   --bs-nav-link-hover-color: #8d8d8d;
 }
+
+/* Alignement des éléments de la liste à puce */
 ul {
   align-items: center;
 }
 
+/* Styles pour la section diaporama*/
 .photo {
   height: 775px;
   position: absolute;
@@ -37,6 +45,7 @@ ul {
   display: block;
 }
 
+/* Styles pour la légende du diaporama */
 .caption {
   position: absolute;
   top: 55%;
@@ -59,9 +68,12 @@ ul {
   font-size: 2rem;
 }
 
+/* Permet de passer à travers la position absolute du diaporama */
 #MV {
   margin-top: 825px;
 }
+
+/* Styles pour les titres des sections */
 #MV h1,
 #CATA h1,
 #FORM h1 {
@@ -69,34 +81,43 @@ ul {
   font-weight: bold;
   font-size: 4rem;
 }
+
+/* Styles pour le titre du footer */
 footer h1 {
   font-family: Almendra;
   font-weight: bold;
-  font-size: 2rem
+  font-size: 2rem;
 }
 
+/* Permet de retirer 3/6 des meilleurs ventes lorsque version mobile*/
 @media screen and (max-width: 425px) {
   .delete {
     display: none;
   }
 }
 
+/* Styles pour les informations de la liste */
 .list-info {
   border: 1px solid rgb(126, 120, 120);
 }
+
+/* Styles pour les images de la liste */
 .card-img-top {
-  height: 275px;  
+  height: 275px;
 }
 
+/* Styles pour le nombre de prix */
 .price-number {
   font-family: Akaya Telivigala;
-  font-size: 2.2rem
+  font-size: 2.2rem;
 }
 
+/* Styles pour l'icône */
 .fa-sharp {
   font-size: 2rem;
 }
 
+/* Style pour un bouton panier */
 #panier {
   /* Définir une couleur de fond et de texte */
   background-color: #0062cc;
@@ -117,22 +138,80 @@ footer h1 {
   text-decoration: none;
 }
 
-/* Scrollbar personnalisée */
+/* Style pour une scrollbar personnalisée */
+/* Suppression de la scrollbar originale */
 ::-webkit-scrollbar {
   width: 00px;
 }
 
+/* Style pour la piste de la scrollbar */
 ::-webkit-scrollbar-track {
+  /* Ajout d'une bordure à gauche */
   box-shadow: inset -5px 0 0 1px white, inset -9px 0 0 1px #f5f5f5;
 }
 
+/* Style pour le pouce de la scrollbar */
 ::-webkit-scrollbar-thumb {
+  /* Définir la couleur de fond */
   background: #e02200;
+  /* Ajouter une bordure arrondie */
   border-radius: 8px;
+  /* Ajouter une bordure supérieure */
   border-top: 1px #9e8989 solid;
+  /* Ajouter une ombre */
   box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.45), inset 0 0 5px 2px rgba(255, 0, 0, 0.4);
 }
+
+/* Style pour la largeur de la scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
+/* Style pour une section météo */
+.container-meteo {
+  /* Centrer la section et définir sa largeur */
+  margin: 50px auto;
+  width: 200px;
+  /* Ajouter une couleur de fond et une bordure arrondie */
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  /* Ajouter une ombre */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour l'icône météo */
+.weather-icon {
+  /* Ajouter un padding et centrer le texte */
+  padding: 0px;
+  text-align: center;
+  /* Ajouter une couleur de fond */
+  background-color: #96B5E5;
+}
+
+.weather-icon img {
+  /* Définir la largeur et la hauteur de l'image */
+  width: 85px;
+  height: 85px;
+  /* Ajouter une couleur de fond */
+  background-color: #96B5E5;
+}
+
+/* Style pour les informations météo */
+.weather-info {
+  /* Ajouter un padding et centrer le texte */
+  padding: 5px;
+  text-align: center;
+}
+
+#city-name {
+  /* Supprimer la marge et définir la taille de police */
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#temperature {
+  /* Supprimer la marge et définir la taille de police */
+  margin: 0;
+  font-size: 20px;
+}
